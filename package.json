@@ -13,7 +13,7 @@
     "test": "nyc --require babel-core/register mocha spec/**/*.spec.js",
     "test:log": "nyc --require babel-core/register mocha spec/**/*.spec.js > cover.log"
   },
-  "author": "creem",
+  "author": "creem/micky",
   "license": "ISC",
   "devDependencies": {
     "babel-plugin-react-transform": "^2.0.2",
