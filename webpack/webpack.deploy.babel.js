@@ -37,7 +37,7 @@ const config = {
   output: {
     path: path.join(ROOT_PATH, '/dist/'),
     filename: 'app.js',
-    chunkFilename: 'chunk.[id].[hash:4].js',
+    chunkFilename: 'chunk.[id].js?v=[hash:4]',
     //cdn host
     publicPath: src[process.env.DEV_ENV],
   },
@@ -104,8 +104,8 @@ const config = {
       source: false,
       modules: true
     }),
-    new ExtractTextPlugin('app.css'),
-    new webpack.optimize.CommonsChunkPlugin('shared', 'shared.js'),
+    new ExtractTextPlugin('app.css?v=[hash:4]'),
+    new webpack.optimize.CommonsChunkPlugin('shared', 'shared.js?v=[hash:4]'),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: false,

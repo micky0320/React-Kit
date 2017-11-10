@@ -13,8 +13,8 @@ export default {
   ],
   output: {
     path: path.join(ROOT_PATH, '/build/'),
-    filename: 'build/[name].[hash:4].js',
-    chunkFilename: 'build/chunk.[id].[hash:4].js',
+    filename: 'build/[name].js?v=[hash:4]',
+    chunkFilename: 'build/chunk.[id].js?v=[hash:4]',
     publicPath: ''
   },
   module: {
@@ -67,7 +67,7 @@ export default {
       inject: 'body',
       template: path.resolve(APP_PATH, 'index.html')
     }),
-    new ExtractTextPlugin('build/app.[hash:4].css'),
+    new ExtractTextPlugin('build/app.css?v=[hash:4]'),
 
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.AggressiveMergingPlugin({
